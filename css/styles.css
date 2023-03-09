@@ -1,0 +1,13 @@
+.hidden{
+  display:none;
+}
+
+#char-desc-title{
+  font-family: Luminari, fantasy;
+  font-weight:bold;
+  
+}
+
+#char-desc{
+  font-family: Luminari, fantasy;
+}

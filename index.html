@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <script src="js/scripts.js"></script>
+  <title>Character Builder</title>
+</head>
+
+<body>
+  <div id="main-menu">
+  <h1>Main Menu</h1>
+  <h3>
+    Hello! This is a character builder for a 
+    text-based adventure game Im building
+    Based on Brandon Sandersons Stormlight Archive!
+  </h3>
+  <button type="button" id="start-button">Start Game</button>
+  </div>
+
+  <div id="instructions" class="hidden">
+  <h4>
+    Instructions: Fill out each field,
+    at the end of the quiz, your character 
+    race will be decided based on your response
+    to the scenarios.
+  </h4>
+  <form id ="nameform">
+    <label for="char-name" type="text">Character Name:</label>
+    <input name="char-name" id="char-name">
+    <button type="submit">Save Name</button>
+  </form>
+  </div>
+
+  <div id="scenario-1" class ="hidden">
+    <p>Do you often find yourself...</p>
+    <form id="s1Input">
+    <input type="radio" id="battle" name="scenario1" value="battle">
+    <label for="battle"> In battle, slaying your enemies</label><br>
+    <input type="radio" id="royal" name="scenario1" value="royal">
+    <label for="royal">In your royal robes</label><br>
+    <input type="radio" id="sleuth" name="scenario1" value="sleuth">
+    <label for="sleuth">Sleuthing through the streets out of sight</label><br>
+    <input type="radio" id="learn" name="scenario1" value="learn">
+    <label for="learn">In the study learning all you can about</label><br>
+    <button type="submit" id="s1">Next</button>
+  </form>
+  </div>
+
+  <div id="scenario-2" class="hidden">
+    <p>
+      You are traveling through town at night, when suddenly you hear footsteps behind you …
+      <br>
+      FLASH!
+      <br>
+      You are momentarily blinded by a sudden flash.
+      <br>
+      When you come to, youre surrounded by thieves. 
+      <br>
+      One has a knife, the other two are unarmed at first glance.
+      <br>
+      As your vision settles, you notice they have glowing blue orbs at the center of their hands. 
+      Must be gifted in destruction magic.<br>
+      What do you do?
+    </p>
+    <form id="s2Input">
+
+      <input type="radio" id="attack" name="scenario2" value="attack">
+      <label for="attack">Attack</label><br>
+      <input type="radio" id="sneak" name="scenario2" value="sneak">
+      <label for="sneak">Wait for the right time to sneak away.</label><br>
+      <input type="radio" id="barter" name="scenario2" value="barter">
+      <label for="barter">Give them whatevers in your wallet. Your wealth is beyond carried coin.</label><br>
+      <input type="radio" id="reason" name="scenario2" value="radio">
+      <label for="reason">Attempt to reason with them</label><br>
+
+      <button type="submit" id="s2">Next</button>
+
+    </form>
+  </div>
+  <div id="scenario-3" class="hidden">
+    <p>The night sky is drained by the rising sun. You look around.</p>
+    <form id="s3Input">
+      <input type="radio" id="south" name="scenario3" value="south">
+      <label for="south">
+        Far to the South, you notice billowing smoke.<br>
+        (Either a pillage or the villagers warming against the nights freeze.)</label><br>
+      <input type="radio" id="north" name="scenario3" value="north">
+      <label for="north">
+        To the North, you can make out a field of broken Papyrus trees.<br>
+        (Only the scholars would need so much paper.<br>
+        There must be a University in that direction)</label><br>
+      <input type="radio" id="east" name="scenario3" value="east">
+      <label for="east">
+        To the East, you hear the rhythmic smashing of stone.<br>
+        (The vikings are training for battle, must be preparing<br> 
+        to raid a bandit camp)  
+      </label><br>
+      <input type="radio" id="west" name="scenario3" value="west">
+      <label for="west">
+        To the West, you notice a geyser of bright <br>
+        blue light emanating from the center of the horizon.<br>
+        (Must be a mana portal, these are formed by powerful mages)
+      </label><br>
+      <button type="submit" id="s3">Go there</button>
+    </form>
+  </div>
+
+  <div id="scenario-4" class="hidden">
+    <p>
+      Awaking to sharp pain, you sit up wearing a tattered cloth. <br>
+      You remember nothing. You look around but your surroundings dont<br>
+      tell you anything. Youre in a forest. Great. <br>
+      What do you do?<br>
+    </p>
+    <form id="s4Input">
+      <input type="radio" id="forage" name="scenario4" value="forage">
+      <label for="forage">
+        Forage herbs to make a potion that allows you to communicate with trees.
+      </label><br>
+      <input type="radio" id="spell" name="scenario4" value="spell">
+      <label for="spell">
+      Cast a wide illusion spell to attract anyone passing through (maybe you <br>
+      can ask where you are?)
+      </label><br>
+      <input type="radio" id="climb" name="scenario4" value="climb">
+      <label for="climb">
+        You know the forest well. Climb to the top of the tree canopy and follow <br>
+        the horizon to the nearest mana portal or smoke billow. 
+      </label><br>
+      <input type="radio" id="hunt" name="scenario4" value="hunt">
+      <label for="hunt">
+        You pick up a rock, its time to hunt.
+        </label><br>
+        <button type="submit" id="s4">Get character!</button>
+    </form>
+    </div>
+  
+    
+  <div id ="char-box" class = hidden>
+    <h4>Character Name</h4>
+    <p id = charname-text></p>
+    <div id = "highelf-box" class = "container hidden">
+      <h2 id ="char-desc-title"> High Elf </h2>
+      <img src="img/high-elf.jpeg">
+      <p id =char-desc>
+        High Elves are known as the intellectuals of the world. <br>
+        They are very pretentious, often peering down at village folk <br> 
+        from their spired walls. This weakness is their strength, for <br>
+        their mental fortitude grants them gifts in <em>charisma,</em> <em>intelligence,</em> <br> 
+        and <em>alchemy.</em>
+      </p>
+    </div>
+
+    <div id = "darkelf-box" class = "container hidden">
+      <h2 id ="char-desc-title"> Dark Elf </h2>
+      <img src="img/dark-elf.png">
+      <p id =char-desc>
+        The fallen angels of the High Elves. Due to their deftness and <br>
+        stealth, some say that Dark Elves are descendants of the night itself.<br>
+        Gifted in <em>theivery,</em> <em>magic,</em> <br> 
+        and <em>alchemy.</em>
+      </p>
+
+    </div>
+    <div id = "paladin-box" class = "container hidden">
+      <h2 id ="char-desc-title">Paladin</h2>
+      <img src="img/paladin.jpeg">
+      <p id =char-desc>
+        Only a fool would challenge the Paladin in hand to hand combat!<br> 
+        The Paladins brutish strength makes up most of their power,<br>
+        so their capacity to reason through a situation is very limited. 
+        That said,there is a reason the Paladins are royalty in the kingdoms 
+        of the world. Gifted in <em>strength,</em> <em>armor,</em> <br> 
+        and <em>blacksmithing.</em>
+      </p>
+    </div>
+
+    <div id = "lighteyes-box" class = "container hidden">
+      <h2 id ="char-desc-title">Alethi Lighteyes</h2>
+      <img src="img/ligtheyes.jpeg">
+      <p id =char-desc>
+        The rulers of the Vorin kingdoms. These are humanoids of Herald-chosen <br>
+        royalty. Although some Lighteyes fight bravely in battle, the most <br>
+        accurate words to describe a light eyes would be noble, pretentious<br>
+        and sheltered. Gifted in <em>divinity,</em> <em>charisma,</em><br> 
+        and <em>bartering.</em>
+      </p>
+    </div>
+  </div>
+
+
+</body>
+</html>
